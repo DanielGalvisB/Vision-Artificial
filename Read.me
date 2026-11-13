@@ -1,0 +1,39 @@
+# Taller de Visión Artificial con OpenCV y C++
+
+Repositorio con la implementación de cuatro proyectos prácticos de Visión Artificial, desarrollados para comprender los fundamentos de procesamiento de imágenes, transformaciones geométricas y calibración de cámaras.
+
+## ⚙️ Entorno de Desarrollo
+* **Lenguaje:** C++
+* **Biblioteca:** OpenCV 5.0 (`opencv_world500.lib`)
+* **IDE:** Visual Studio (Configuración: Modo Release, Arquitectura x64)
+
+## 🚀 Proyectos Implementados
+
+### Proyecto 1: Captura de Video en Tiempo Real
+Lectura del flujo de datos de la cámara web mediante `cv::VideoCapture`. Validación de la vinculación de bibliotecas dinámicas (DLL) y visualización de fotogramas.
+
+![Evidencia Proyecto 1](evidencias/proyecto1.jpg)
+
+### Proyecto 2: Calibración y Detección de Tablero
+Uso de `findChessboardCorners` para la detección de características, paso previo para la calibración de cámaras y obtención de la Matriz K. 
+* **Patrón:** Tablero de ajedrez con `7x5` esquinas interiores.
+* **Técnicas:** Conversión a escala de grises, refinamiento subpíxel (`cornerSubPix`) y renderizado de la malla.
+
+![Evidencia Proyecto 2](evidencias/proyecto2.jpg)
+
+### Proyecto 3: Filtros Espaciales y Detección de Bordes
+Aplicación de convolución espacial mediante diferentes núcleos (kernels) para el procesamiento en vivo con cuatro ventanas simultáneas:
+1. **Original:** Flujo de video sin alteraciones.
+2. **Filtro de Caja (Box Filter):** Desenfoque general mediante promediado de vecinos.
+3. **Filtro de Mediana:** Eliminación de ruido preservando bordes.
+4. **Filtro Sobel:** Detección de gradientes y bordes, combinando derivadas en los ejes X y Y.
+
+![Evidencia Proyecto 3](evidencias/proyecto3.jpg)
+
+### Proyecto 4: Transformaciones Afines
+Manipulación geométrica de la imagen preservando líneas rectas, utilizando matrices de 2x3 y `warpAffine`.
+1. **Reflexión:** Inversión horizontal (efecto espejo).
+2. **Rotación:** Matriz matemática manual con funciones trigonométricas (`sin`, `cos`) para animación de giro continuo.
+3. **Cizallamiento y Escala:** Deformación controlada modificando los componentes de la matriz.
+
+![Evidencia Proyecto 4](evidencias/proyecto4.jpg)
